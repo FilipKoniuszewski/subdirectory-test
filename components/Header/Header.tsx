@@ -10,7 +10,7 @@ export const Header: FunctionComponent = () => {
   const { theme, switchTheme } = useContext(ThemeContext);
   return (
     <div className='header'>
-      <Link to='/' className='nav-title'>
+      <Link to='/countries-search' className='nav-title'>
         <h2>Where in the world?</h2>
       </Link>
       <div className='toggle-mode' onClick={() => switchTheme()}>
