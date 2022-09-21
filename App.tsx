@@ -13,8 +13,8 @@ function App() {
     <div className='App' data-theme={theme.theme}>
       <Routes>
         <Route path='/' element={<Layout />}>
+          <Route path=':name' element={<Country />} />
           <Route index element={<CountriesSection />} />
-          <Route path='/:name' element={<Country />} />
         </Route>
       </Routes>
     </div>

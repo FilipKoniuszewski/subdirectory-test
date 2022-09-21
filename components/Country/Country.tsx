@@ -1,5 +1,5 @@
 import { FunctionComponent } from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { FaAngleLeft } from "react-icons/fa";
 
 import useCountriesApi from "../../hooks/useCountriesApi";
@@ -10,17 +10,15 @@ import { Text } from "../Text/Text";
 import "./Country.scss";
 
 export const Country: FunctionComponent = () => {
-  const params = useParams();
+  const location = useLocation();
 
   const { countries, loading } = useCountriesApi(
-    `https://restcountries.com/v3.1/name/${params.name}?fullText=true`
+    `https://restcountries.com/v3.1/name${location.pathname}?fullText=true`
   );
 
   if (!countries.length) return null;
 
   const countryData: any = countries[0];
-
-  console.log(countryData);
 
   const {
     flags,
@@ -71,7 +69,7 @@ export const Country: FunctionComponent = () => {
       </div>
       <div className='country__container'>
         <div className='country__image-wrapper'>
-          <img src={flags?.png} alt='flag-image' className='flag' />
+          <img src={flags?.png} alt='flag' className='flag' />
         </div>
         <div className='country__info-wrapper'>
           <div className='country__title-section'>

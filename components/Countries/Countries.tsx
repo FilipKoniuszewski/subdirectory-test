@@ -1,5 +1,4 @@
 import { FunctionComponent } from "react";
-
 import useCountriesApi from "../../hooks/useCountriesApi";
 import { CountryCard } from "../CountryCard/CountryCard";
 import { FilterOptions } from "../Filter/Filter";

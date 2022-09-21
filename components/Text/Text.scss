@@ -1,6 +1,7 @@
 @import "../../mixins.scss";
 .text__name {
   @include CountriesFontLight;
+  max-width: 30ch;
 }
 
 .text__container {
