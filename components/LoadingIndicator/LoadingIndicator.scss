@@ -1,0 +1,45 @@
+:root {
+  --hue: 220deg;
+  --base-bg-sat: 20%;
+  --base-bg-lum: 12%;
+  --base-bg: hsl(var(--hue), var(--base-bg-sat), var(--base-bg-lum));
+  --base-fg-sat: 50%;
+  --base-fg-lum: 80%;
+  --base-fg: hsl(var(--hue), var(--base-fg-sat), var(--base-fg-lum));
+}
+
+div.notice {
+  font-size: 4em;
+  text-align: center;
+  margin-top: 2em;
+}
+
+.world {
+  fill: var(--base-fg);
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  border-radius: 50%;
+  overflow: hidden;
+  white-space: nowrap;
+  border: 2px solid var(--base-fg);
+  box-sizing: border-box;
+  background-image: url(#icon-world);
+
+  svg {
+    width: 4em;
+    height: 1em;
+    margin-top: calc(-2px + -0.05em);
+    display: inline;
+    animation: world-scroll 3s linear infinite;
+  }
+}
+
+@keyframes world-scroll {
+  from {
+    margin-left: -2.75em;
+  }
+  to {
+    margin-left: -1em;
+  }
+}

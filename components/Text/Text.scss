@@ -1,0 +1,11 @@
+@import "../../mixins.scss";
+.text__name {
+  @include CountriesFontLight;
+}
+
+.text__container {
+  display: flex;
+  gap: 0.3rem;
+  color: var(--text);
+  @include CountriesFontSemiBold;
+}

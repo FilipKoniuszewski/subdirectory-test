@@ -1,0 +1,45 @@
+@import "../../mixins.scss";
+
+.country-card__container {
+  background: var(--bg-card);
+  box-shadow: var(--box-shadow);
+  justify-self: start;
+  align-self: start;
+  border-radius: 0.4rem;
+  text-decoration: none;
+  color: var(--text);
+  transition: transform 0.3s;
+
+  &:hover {
+    transform: translateY(-7px);
+  }
+
+  .country-card__title {
+    @include CountriesFontExtraBold;
+  }
+
+  .img__container {
+    height: 12rem;
+    width: 20rem;
+  }
+
+  img {
+    border-radius: 0.4rem 0.4rem 0 0;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    overflow: hidden;
+  }
+
+  .country-card__content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  > div:nth-of-type(2),
+  > div:nth-of-type(3) {
+    padding: 1rem;
+  }
+}

@@ -1,0 +1,125 @@
+@import "../../mixins.scss";
+
+.country__container {
+  display: flex;
+  justify-content: center;
+  padding: 5rem;
+  gap: 3rem;
+  .country__image-wrapper {
+    display: flex;
+    max-width: 35rem;
+    width: 100%;
+    border-radius: 0.5rem;
+    box-shadow: var(--box-shadow);
+    img {
+      border-radius: 0.5rem;
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .country__title-section {
+    @include CountriesFontExtraBold;
+    color: var(--text);
+  }
+
+  .country__info-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    gap: 3rem;
+  }
+
+  .country__details-section {
+    display: flex;
+    gap: 5rem;
+  }
+
+  .country__details-section-first,
+  .country__details-section-second {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+
+  .country__border-countries-section {
+    @include CountriesFontSemiBold;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    color: var(--text);
+    flex-wrap: wrap;
+    width: 30rem;
+    .country__cta {
+      @include CountriesFontLight;
+      text-decoration: none;
+      color: var(--text);
+      background: var(--bg-input);
+      padding: 0.3rem 0.7rem;
+      border-radius: 0.5rem;
+      box-shadow: var(--box-shadow);
+
+      &:hover {
+        background: var(--bg-input-hover);
+      }
+    }
+  }
+}
+
+.back-cta-container {
+  margin: 5rem 5rem;
+  display: flex;
+  align-items: center;
+
+  .back-cta {
+    @include CountriesFontSemiBold;
+    color: var(--text);
+    background: var(--bg-input);
+    box-shadow: var(--box-shadow);
+    padding: 1rem 2rem;
+    border-radius: 0.5rem;
+    text-align: center;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 0.3rem;
+
+    text-decoration: none;
+    &:hover {
+      background: var(--bg-input-hover);
+      cursor: pointer;
+    }
+  }
+}
+
+@media (max-width: 1200px) {
+  .country__container {
+    flex-direction: column;
+    align-items: center;
+
+    .country__image-wrapper {
+      border-radius: 0.2rem;
+
+      img {
+        border-radius: 0.2rem;
+      }
+    }
+
+    .country__border-countries-section {
+      width: initial;
+    }
+  }
+  .back-cta-container {
+    margin: 2rem 5rem;
+  }
+
+  .country__info-wrapper {
+    width: 100%;
+  }
+
+  .country__details-section {
+    flex-direction: column;
+    gap: 2rem;
+  }
+}

@@ -1,0 +1,48 @@
+@import "../../mixins.scss";
+
+.countries__searchbar {
+  color: var(--text);
+  margin-bottom: 5rem;
+  margin-left: 1rem;
+  display: flex;
+  box-shadow: var(--box-shadow);
+
+  .searchbar__icon {
+    background: var(--bg-input);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-left: 1rem;
+    border-radius: 0.5rem 0 0 0.5rem;
+    order: 1;
+  }
+
+  input {
+    color: var(--text);
+    background: var(--bg-input);
+    border: none;
+    padding: 1rem 2rem 1rem 1rem;
+    border-radius: 0 0.4rem 0.4rem 0;
+    font-size: 1.2rem;
+    transition: background-color 0.2s;
+    order: 2;
+
+    &:focus-visible {
+      outline: none;
+      background: var(--bg-input-hover);
+    }
+
+    &:focus-visible + .searchbar__icon {
+      outline: none;
+      background: var(--bg-input-hover);
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .countries__searchbar {
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 1.5rem;
+  }
+}

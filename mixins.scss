@@ -1,0 +1,18 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;800&display=swap");
+
+$CountriesFont: "Nunito Sans", Arial, Verdana, Tahoma, Georgia, sans-serif;
+
+@mixin CountriesFontExtraBold() {
+  font-family: $CountriesFont;
+  font-weight: 800;
+}
+
+@mixin CountriesFontSemiBold() {
+  font-family: $CountriesFont;
+  font-weight: 600;
+}
+
+@mixin CountriesFontLight() {
+  font-family: $CountriesFont;
+  font-weight: 300;
+}

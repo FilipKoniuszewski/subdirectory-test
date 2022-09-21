@@ -1,0 +1,32 @@
+@import "../../mixins.scss";
+
+.countries__section {
+  @include CountriesFontSemiBold;
+  padding: 5rem 5rem;
+}
+
+.countries__box {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 320px);
+  justify-content: space-evenly;
+  margin: 0 auto;
+  gap: 4rem;
+  height: 100%;
+}
+
+.search__section {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+@media (max-width: 768px) {
+  .countries__section {
+    padding: 2rem 0;
+    margin: 0 auto;
+  }
+  .search__section {
+    flex-direction: column;
+    justify-content: start;
+  }
+}

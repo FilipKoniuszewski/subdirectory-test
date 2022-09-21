@@ -1,0 +1,74 @@
+.countries__filter {
+  color: var(--text);
+  margin-right: 1rem;
+  cursor: pointer;
+  user-select: none;
+  position: relative;
+  width: 15rem;
+
+  .selected-container {
+    box-shadow: var(--box-shadow);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+    padding: 1rem 2rem;
+    border-radius: 0.5rem;
+
+    .selected-option {
+      display: flex;
+      align-items: center;
+    }
+
+    .selected-icon {
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  .filter__options {
+    background: var(--bg-input-hover);
+    box-shadow: var(--box-shadow);
+    border-radius: 0.5rem;
+    margin-top: 0.3em;
+    z-index: 1000;
+    position: absolute;
+    min-width: 100%;
+  }
+
+  .option {
+    padding: 0.6rem 2rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+
+    &:hover {
+      background: var(--bg-input);
+    }
+  }
+
+  .option:nth-of-type(1) {
+    border-radius: 0.4rem 0.4rem 0 0;
+  }
+
+  .option:nth-of-type(6) {
+    border-radius: 0 0 0.4rem 0.4rem;
+  }
+
+  .selected-container--inactive {
+    background: var(--bg-input);
+  }
+
+  .selected-container--active {
+    background: var(--bg-input-hover);
+  }
+}
+
+@media (max-width: 768px) {
+  .countries__filter {
+    margin-bottom: 2rem;
+
+    margin-left: auto;
+    margin-right: 5rem;
+  }
+}
