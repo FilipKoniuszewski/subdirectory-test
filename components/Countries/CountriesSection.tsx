@@ -19,12 +19,12 @@ export const CountriesSection: FunctionComponent = () => {
   };
 
   return (
-    <div className='countries__section'>
+    <main className='countries__section'>
       <div className='search__section'>
         <Searchbar onChange={onInputChange} />
         <Filter onChange={onFilterChange} filter={filter} />
       </div>
       <Countries input={userInput} filter={filter} />
-    </div>
+    </main>
   );
 };

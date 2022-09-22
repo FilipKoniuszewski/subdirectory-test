@@ -9,9 +9,9 @@ import { Link } from "react-router-dom";
 export const Header: FunctionComponent = () => {
   const { theme, switchTheme } = useContext(ThemeContext);
   return (
-    <div className='header'>
+    <header className='header'>
       <Link to='/countries-search' className='nav-title'>
-        <h2>Where in the world?</h2>
+        <h1>Where in the world?</h1>
       </Link>
       <div className='toggle-mode' onClick={() => switchTheme()}>
         <div className='toggle-icon'>
@@ -22,6 +22,6 @@ export const Header: FunctionComponent = () => {
           {theme === Themes.Light ? "Dark Mode" : "Light Mode"}
         </div>
       </div>
-    </div>
+    </header>
   );
 };

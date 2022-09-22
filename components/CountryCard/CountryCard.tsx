@@ -17,8 +17,10 @@ export const CountryCard: FunctionComponent<CountryCardFields> = ({
     .toString()
     .replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 
+  const nameUrl = name.split(" ").join("%20");
+
   return (
-    <Link to={`${name}`} className='country-card__container'>
+    <Link to={`${nameUrl}`} className='country-card__container'>
       <div className='img__container'>
         <img src={flag} alt='flag' className='country-card__img' />
       </div>
