@@ -1,5 +1,5 @@
 import { FunctionComponent } from "react";
-import { Link, useLocation, useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { FaAngleLeft } from "react-icons/fa";
 
 import useCountriesApi from "../../hooks/useCountriesApi";
