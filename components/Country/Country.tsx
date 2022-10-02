@@ -26,33 +26,38 @@ export const Country: FunctionComponent = () => {
     population,
     region,
     subregion,
-    capital,
     borders,
     currencies,
     languages,
   } = countryData;
 
-  const capitalName = capital[0];
+  const notFound = "N/A";
 
-  const nativeNames: any = Object.values(name.nativeName)[0];
+  const capitalName = countryData.capital ? countryData.capital[0] : notFound;
 
   const commonName = name?.common;
+
+  const nativeNames: any = name.nativeName && Object.values(name.nativeName)[0];
 
   const populationNumber = population
     .toString()
     .replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 
-  const Currencies: string = Object.values(currencies)
-    ?.map((currency: any) => {
-      return currency.name;
-    })
-    .join(", ");
+  const Currencies: string = currencies
+    ? Object.values(currencies)
+        ?.map((currency: any) => {
+          return currency.name;
+        })
+        .join(", ")
+    : notFound;
 
-  const Languages: string = Object.values(languages)
-    ?.map((language: any) => {
-      return language;
-    })
-    .join(", ");
+  const Languages: string = languages
+    ? Object.values(languages)
+        ?.map((language: any) => {
+          return language;
+        })
+        .join(", ")
+    : notFound;
 
   const Borders: string[] = borders?.map((border: string) => {
     return border;
@@ -77,7 +82,10 @@ export const Country: FunctionComponent = () => {
           </div>
           <div className='country__details-section'>
             <div className='country__details-section-first'>
-              <Text label='Native Name' name={nativeNames.common} />
+              <Text
+                label='Native Name'
+                name={nativeNames?.common ? nativeNames?.common : notFound}
+              />
               <Text label='Population' name={populationNumber} />
               <Text label='Region' name={region} />
               <Text label='Sub Region' name={subregion} />
