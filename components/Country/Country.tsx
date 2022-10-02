@@ -12,8 +12,6 @@ import "./Country.scss";
 export const Country: FunctionComponent = () => {
   const params = useParams();
 
-  console.log(params);
-
   const { countries, loading } = useCountriesApi(
     `https://restcountries.com/v3.1/name/${params.name}?fullText=true`
   );
