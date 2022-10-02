@@ -67,7 +67,7 @@ export const Country: FunctionComponent = () => {
     <>
       {loading && <LoadingIndicator />}
       <div className='back-cta-container'>
-        <Link to='/' className='back-cta'>
+        <Link to='/countries-search' className='back-cta'>
           <FaAngleLeft />
           Back
         </Link>
